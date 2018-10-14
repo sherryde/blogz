@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block content %}
+
+    <article class="media content-section">
+        <h2 class="article-title">{{ post.title }}</h2>
+        <span class="time-date"> @ {{ post.moment.strftime('%m-%d-%y %H:%M')}}</span>
+        <p class="article-content">Post {{ post.id }}. {{ post.text }}</p>
+    </article>
+
+{% endblock content %}
+<!-- TODO -->
+<!-- add DateTime.UtcNow.ToLocalTime to database get local time -->

@@ -1,0 +1,23 @@
+% extends "base.html" %} {% block content %}
+  {% if blog == 0 %}
+    <p class="blog-posted">No Blog Post Yet</p>
+    {% else %}
+
+    {% for post in posts %}
+        <article class="media content-section">
+            <h2><a class="article-title article-title-hover" href="./blog?id={{post.id}}">{{ post.title }}</a></h2>
+            <p class="article-content">Post {{ post.id }}. {{ post.text }}</p>
+        </article>
+
+
+     {% endfor %}
+  {% endif %}
+{% endblock %}
+
+<!--     <form method="POST" action="/delete-post">
+            <input class="button" type="submit" value="Delete!" />
+            <label class="done-inputs">
+            <input type="hidden" name="post-id" value="{{post.id}}" />
+            </label>
+        </form>
+ -->

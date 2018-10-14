@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main.css') }}">
+
+    {% if title %}
+        <title>Build a blog - {{ title }}</title>
+    {% else %}
+        <title>Build a Blog</title>
+    {% endif %}
+</head>
+<body>
+    <header class="site-header">
+      <nav class="navbar navbar-expand-md navbar-dark bg-forest fixed-top">
+        <div class="container">
+            <div class="navbar-nav mr-auto">
+              <a class="nav-item nav-link" href="/blog">Blog List</a>
+              <a class="nav-item nav-link" href="/addpost">Add Post</a>
+              <div class="nav-item-logo"><h2>Build a Blog</h2></div>
+        </div>
+      </nav>
+    </header>
+    <main role="main" class="container">
+
+      <!-- {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+        {% for category, message in messages %}
+          <div class="alert alert-{{category}}">{{ message }}
+          </div>
+        {% endfor %}
+      {% endif %}
+      {% endwith %}
+ -->
+      {% block content %}{% endblock %}
+    </main>
+
+</body>
+</html>
+<!-- TODO -->
+<!-- Put flash loop in base and call in the category -->
+<!-- #http://flask.pocoo.org/docs/1.0/api/#message-flashing -->
+<!-- 3. https://stackoverflow.com/questions/40949746/how-to-display-flashing-message-without-reloading-the-page-in-flask -->
+<!-- Flask Web Development pg. 46 base messages flashiing  https://tinyurl.com/y6wqtwm8 -->
