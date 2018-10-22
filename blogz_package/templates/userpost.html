@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+        
+    {% for blog in blog_id %}
+        <article class="media content-section"></article>
+            <h2><a class="titles" href="/blog?id={{blog.id}}">{{blog.title}}</a></h2>
+            <p class="article-content">Post {{ blog.id }}. {{blog.text}}</p>      
+            <h5>Written by <a href="/blog?user_id={{user.id}}">{{ user.username }}</a> @ {{blog.moment}}</h5>
+        </article>
+
+    {% endfor %}
+
+
+
+
+{% endblock %}

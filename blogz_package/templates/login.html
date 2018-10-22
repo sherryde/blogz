@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" type="text/css" href= "{{ url_for('static', filename='main.css') }}">
+
+    {% if title %}
+        <title>Blogz - {{ title }}</title>
+    {% else %}
+        <title>Blogz</title>
+    {% endif %}
+</head>
+<body>
+<h1>Blogz Login</h1>
+<p>If you don't have an account, you may <a href="/register">register</a> for one</p><br>
+<form action="/login" method="post" class="form-group">
+    <table>
+        <tr>
+            <td><label for="username">Username</label></td>
+            <td>
+                <input name="username" type="text" value="{{ username }}" 
+                required pattern="[A-Za-z0-9]{3,20}" />
+            </td>
+        </tr>
+        <tr>
+            <td><label for="password">Password</label></td>
+            <td>
+                <input name="password" type="password" 
+                required pattern="[a-zA-Z0-9_-]{3,20}" />
+            </td>
+        </tr>
+    </table>
+    <input class="login-button" type="submit" value="Login" />
+</form>
+</body>
+</html>
+<!-- http://flask.pocoo.org/docs/1.0/tutorial/blog/?highlight=queries#update -->

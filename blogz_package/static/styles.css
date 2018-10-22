@@ -34,7 +34,7 @@ h1, h2 {
 .site-header .navbar-nav .nav-link:hover {
   color:  #657031;
 }
-.site-header .navbar-nav .nav-link.active .nav-item-logo {
+.site-header .navbar-nav .nav-link .nav-item-logo {
   font-weight: 500;
 }
 .nav-item-logo {
@@ -90,7 +90,7 @@ h1, h2 {
   position: relative;
   border-style: none;
 }
-.blog-title-label, .blog-text-label{
+.blog-title-label, .blog-text-label {
   margin-left: 4%;
   color:  rgb(63, 50, 34);
 }

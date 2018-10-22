@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" type="text/css" href= "{{ url_for('.static', filename='main.css') }}">
+
+    {% if title %}
+        <title>Blogz - {{ title }}</title>
+    {% else %}
+        <title>Blogz</title> 
+    {% endif %}
+   
+</head>
+<body>
+    <header class="site-header">
+      <nav class="navbar navbar-expand-md navbar-dark bg-forest fixed-top">
+        <div class="container">
+            <div class="navbar-nav mr-auto">
+              <a class="nav-item nav-link" href="{{ url_for('blog') }}">Blog List</a>
+              <a class="nav-item nav-link" href="{{ url_for('addpost') }}">Add Post</a>
+              <!-- <div class="nav-item nav-access"> -->
+                  <a class="nav-item nav-link" href="{{ url_for('login') }}">Login</a>
+                  <a class="nav-item nav-link" href="{{ url_for('logout') }}">Logout</a>
+                <!-- </div> -->
+              <div class="nav-item-logo"> 
+                  <h2>{% if user %} {{ user.username }}'s {% endif %} Blogz</h2>
+                  
+                  
+                </div>
+            </div>
+      </nav>
+    </header>
+    <main role="main" class="container">
+
+      {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+        {% for category, message in messages %}
+          <div class="alert alert-{{ category }}">{{ message }}</div>
+        {% endfor %}
+      {% endif %}
+      {% endwith %}
+
+      {% block content %}{% endblock %}
+    </main>
+
+</body>
+</html>
+<!-- TODO -->
+<!-- Put flash loop in base and call in the category -->
+<!-- #http://flask.pocoo.org/docs/1.0/api/#message-flashing -->
+<!-- 3. https://stackoverflow.com/questions/40949746/how-to-display-flashing-message-without-reloading-the-page-in-flask -->
+<!-- Flask Web Development pg. 46 base messages flashiing  https://tinyurl.com/y6wqtwm8 -->
+<!-- href= "{{ url_for('.static', filename='main.css') }}" -->
+
+
+.
+├── __pycache__
+│   ├── hashutils.cpython-37.pyc
+│   ├── main.cpython-37.pyc
+│   └── models.cpython-37.pyc
+├── blogz_package
+│   ├── LICENSE
+│   ├── __init__.py
+│   ├── __pycache__
+│   │   ├── __init__.cpython-37.pyc
+│   │   ├── hashutils.cpython-37.pyc
+│   │   ├── models.cpython-37.pyc
+│   │   └── route.cpython-37.pyc
+│   ├── hashutils.py
+│   ├── models.py
+│   ├── route.py
+│   ├── static
+│   │   └── styles.css
+│   └── templates
+│       ├── addpost.html
+│       ├── base.html
+│       ├── blog.html
+│       ├── index.html
+│       ├── login.html
+│       ├── register.html
+│       ├── userpost.html
+│       └── viewpost.html
+└── run.py

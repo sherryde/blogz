@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block content %}
+    
+
+    {% if users == 0 %}
+    <p>No users yet!</p>
+    {% else %}
+
+      <p>Member List</p>
+        {% for user in users %}
+            <li>
+              <a class="content-section" href="/blog?user_id={{user.id}}">{{ user.username }}</a>
+            </li>
+        {% endfor %}                   
+
+    {% endif %} 
+
+
+{% endblock %}
+
+
+<!-- https://stackoverflow.com/questions/7478366/create-dynamic-urls-in-flask-with-url-for#7478705 -->
+<!-- http://flask.pocoo.org/docs/1.0/api/#flask.url_for -->
+
+
