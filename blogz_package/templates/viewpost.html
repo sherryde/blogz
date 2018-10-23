@@ -1,12 +1,12 @@
 {% extends "base.html" %}
 {% block content %}
-
-    <article class="media content-section">
-        <h2><a class="article-title" href="/blog?id={{blog_id.id}}">{{ blog_id['title'] }}</a></h2>
-        <p class="article-content">Post {{ blog_id['id'] }}. {{ blog_id['text'] }}</p>
-            <h5>Written by <a href="/blog?user_id={{blog_id.owner.id}}">{{ blog_id.owner.username }}</a> @ {{ blog_id['moment'].strftime('%m-%d-%y %H:%M')}}</h5>
-    </article> 
-    
+    <div class="add-article-content">
+        <article class="media content-section">
+            <h2><a class="article-title" href="/blog?id={{blog_id.id}}">{{ blog_id['title'] }}</a></h2>
+            <p class="article-content">Post {{ blog_id['id'] }}. {{ blog_id['text'] }}</p>
+                <h5>Written by <a href="/blog?user_id={{blog_id.owner.id}}">{{ blog_id.owner.username }}</a> @ {{ blog_id['moment'].strftime('%m-%d-%y %H:%M')}}</h5>
+        </article>
+    </div>
 
 {% endblock content %}
 <!-- TODO -->

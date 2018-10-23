@@ -1,5 +1,6 @@
 {% extends "base.html" %} {% block content %}
   {% if blog == 0 %}
+   <div class="add-article-content">
     <p class="blog-posted">No Blog Post Yet</p>
     {% else %}
         <article>
@@ -16,7 +17,7 @@
             {% endfor %}
  
         </article>
-       
+   </div>  
   {% endif %}
 
   

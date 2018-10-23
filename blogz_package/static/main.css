@@ -90,7 +90,7 @@ h1, h2 {
   position: relative;
   border-style: none;
 }
-.blog-title-label, .blog-text-label {
+.blog-title-label, .blog-text-label, .form-label {
   margin-left: 4%;
   color:  rgb(63, 50, 34);
 }
@@ -110,7 +110,7 @@ h1, h2 {
   resize: vertical;
   font-size: 90%;
 }
-.addpost-submit-btn {
+.submit-btn {
   color: rgb(63, 50, 34);
   background: linear-gradient(95deg, #fcf8c481, #8ab47681);
   width: 15%;
@@ -121,11 +121,11 @@ h1, h2 {
   font-weight: bold;
   max-width: 8em;
 }
-.addpost-submit-btn:hover {
+.submit-btn:hover {
   background-color: #fcf8bb98;
   border-color: darkgreen;
 }
-input[type=text], textarea {
+input[type=text], [type=password],[type=email], textarea {
   -webkit-transition: all 0.30s ease-in-out;
   -moz-transition: all 0.30s ease-in-out;
   -ms-transition: all 0.30s ease-in-out;
@@ -134,7 +134,7 @@ input[type=text], textarea {
   border: 2px solid #e0ccb1;
 }
 
-input[type=text]:focus, textarea:focus {
+input[type=text], [type=password], [type=email]:focus, textarea:focus {
   box-shadow: 0 0 5px rgba(141, 163, 120, 1);
   border: 1px solid rgba(141, 163, 120, 1);
   font-size: 100%;
