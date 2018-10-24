@@ -1,13 +1,14 @@
-{% extends "base.html" %}
-{% block content %}
-    <div class="add-article-content">
+{% extends "base.html" %}{% block content %}
+    
+<h3>{{ blog_id.owner.username }}'s post</h3>
+    <div class="post-article-content">
         <article class="media content-section">
-            <h2><a class="article-title" href="/blog?id={{blog_id.id}}">{{ blog_id['title'] }}</a></h2>
-            <p class="article-content">Post {{ blog_id['id'] }}. {{ blog_id['text'] }}</p>
+            <h2><a class="article-title article-title-hover" href="/blog?id={{blog_id.id}}">{{ blog_id['title'] }}</a></h2>
+            <p class="article-content" >Post {{ blog_id['id'] }}. {{ blog_id['text'] }}</p><br>
                 <h5>Written by <a href="/blog?user_id={{blog_id.owner.id}}">{{ blog_id.owner.username }}</a> @ {{ blog_id['moment'].strftime('%m-%d-%y %H:%M')}}</h5>
         </article>
     </div>
-
+    
 {% endblock content %}
 <!-- TODO -->
 <!-- http://flask.pocoo.org/docs/1.0/tutorial/blog/?highlight=queries#index -->

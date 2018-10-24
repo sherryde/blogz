@@ -2,30 +2,30 @@
 {% block content %}
 
 <div class="add-article-content">
-<form action="/addpost" method="POST">
-    <fieldset class="form-group">
-        <label class="blog-title-label" for="blog-title">Post Title:</label><br>
-
-            {% with messages = get_flashed_messages(category_filter=['title']) %}
-            {% for message in messages %}
-                <div>{{ message }}</div>
-            {% endfor %}
-            {% endwith %}
-
-            <input class="article-title form-title-field" type="text" name="blog-title" required title='Title field is empty' /><br>
-        <label class="blog-text-label" for="blog-text">Post Text:</label><br>
-
-            {% with messages = get_flashed_messages(category_filter=['text']) %}
-            {% for message in messages %}
-                <div>{{ message }}</div>
-            {% endfor %}
-            {% endwith %}
-
-        <textarea class="article-text form-title-field" name="blog-text" required title='Post field is empty'></textarea>
-    </fieldset>
-    <input class="addpost-submit-btn" type="submit" value="submit">
-</form>
-</div>
+    <form action="/addpost" method="POST">
+        <fieldset class="form-group">
+            <label class="blog-title-label" for="blog-title">Post Title:</label><br>
+    
+                {% with messages = get_flashed_messages(category_filter=['title']) %}
+                {% for message in messages %}
+                    <div>{{ message }}</div>
+                {% endfor %}
+                {% endwith %}
+    
+                <input class="article-title form-title-field" type="text" name="blog-title" required title='Title field is empty' /><br>
+            <label class="blog-text-label" for="blog-text">Post Text:</label><br>
+    
+                {% with messages = get_flashed_messages(category_filter=['text']) %}
+                {% for message in messages %}
+                    <div>{{ message }}</div>
+                {% endfor %}
+                {% endwith %}
+    
+            <textarea class="article-text form-title-field" name="blog-text" required title='Post field is empty'></textarea>
+        </fieldset>
+        <input class="submit-btn" type="submit" value="submit">
+    </form>
+    </div>
 
 {% endblock content%}
 <!-- TODO -->

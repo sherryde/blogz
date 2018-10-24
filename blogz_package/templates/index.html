@@ -3,22 +3,22 @@
 {% block content %}
     
 
-    {% if users == 0 %}
-    <p>No users yet!</p>
-    {% else %}
+{% if users == 0 %}
+<p>No users yet!</p>
+{% else %}
 
-    <h2>Member List</h2>
+  <h3>Member List</h3>
     <ul>
     {% for user in users %}
-        <article class="media content-section">
+        <article class="content-section">
 
-              <a class="content-section article-title article-title-hover" href="/blog?user_id={{user.id}}">{{ user.username }}</a>
+              <h3><a class=" article-title article-title-hover" 
+                href="/blog?user_id={{user.id}}">{{ user.username }}</a></h3>
 
         </article>
     {% endfor %}
     </ul>
 {% endif %}
-
 
 {% endblock %}
 

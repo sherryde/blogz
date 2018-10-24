@@ -16,12 +16,19 @@ body {
   margin-top: .5rem;
 }
 h1, h2 {
-  color: #431406;
+ /* margin-left: 0px;*/
+  margin-top: 10px;
+  color: #4C2F25;
+}
+.blog-posted, h3{
+  margin-left: 10px;
+  margin-top: 10px;
+  font-weight: bold;
 }
 .bg-forest {
   /*background-color: #2B9113FF;*/
   background: linear-gradient(180deg, #fcf8c481, #8AB476BE);
-  padding: 10px 25px 20px;
+  padding: 10px 15px 20px;
   margin: 5px 0px 5px 0px;
   /*background-position-x: absolute;*/
   -moz-box-shadow: 2px 2px 3px 0px rgba(63, 63, 38, .6392156862745098);
@@ -29,7 +36,7 @@ h1, h2 {
 }
 .site-header .navbar-nav .nav-link {
   color:  #6A4031;
-  margin: 4px;
+  margin: 3px;
 }
 .site-header .navbar-nav .nav-link:hover {
   color:  #657031;
@@ -42,10 +49,12 @@ h1, h2 {
   float:right;
   clear:right;
 }
+/*.media {
 
+}*/
 .content-section {
   background: #ffffff;
-  padding: 10px 20px;
+  padding: 0px 0px 10px 30px;
   border: 1px solid #dddddd;
   border-radius: 3px;
   margin: 10px 0px 5px 0px;
@@ -71,16 +80,21 @@ h1, h2 {
 
 .article-content {
   white-space: pre-line;
-  margin-left: 10px;
+  /*margin-left: 10px;*/
   margin-top: 10px;
+  color: #4C2F25;
+}
+.add-content {
+  margin-top: 2%;
+  margin-left: 10px;
   color: #4C2F25;
 }
 .time-date {
   float:right;
   font-size: 0.8em;
 }
-.add-article-content {
-  padding-top: 3%;
+.post-article-content {
+  padding-top: 2%;
 }
 .form-group {
   font: 400 1.3em/1.5 Helvetica, Verdana, sans-serif;
@@ -89,6 +103,7 @@ h1, h2 {
   margin-right: 4%;
   position: relative;
   border-style: none;
+  padding-top: 1em;
 }
 .blog-title-label, .blog-text-label, .form-label {
   margin-left: 4%;
@@ -110,7 +125,7 @@ h1, h2 {
   resize: vertical;
   font-size: 90%;
 }
-.submit-btn {
+.submit-btn, .login-submit-btn, .register-submit-btn {
   color: rgb(63, 50, 34);
   background: linear-gradient(95deg, #fcf8c481, #8ab47681);
   width: 15%;
@@ -120,6 +135,10 @@ h1, h2 {
   border-radius: 0.3em;
   font-weight: bold;
   max-width: 8em;
+}
+.login-submit-btn, .register-submit-btn {
+  margin-left: 17em;
+  max-width: 9em;
 }
 .submit-btn:hover {
   background-color: #fcf8bb98;
@@ -134,7 +153,7 @@ input[type=text], [type=password],[type=email], textarea {
   border: 2px solid #e0ccb1;
 }
 
-input[type=text], [type=password], [type=email]:focus, textarea:focus {
+input[type=text]:focus, [type=password]:focus, [type=email]:focus, textarea:focus {
   box-shadow: 0 0 5px rgba(141, 163, 120, 1);
   border: 1px solid rgba(141, 163, 120, 1);
   font-size: 100%;

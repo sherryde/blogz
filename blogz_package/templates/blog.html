@@ -1,23 +1,22 @@
 {% extends "base.html" %} {% block content %}
-  {% if blog == 0 %}
-   <div class="add-article-content">
+  
+{% if blog == 0 %}
+  <div class="add-article-content">
     <p class="blog-posted">No Blog Post Yet</p>
     {% else %}
-        <article>
+
             {% for blog in blog_id %}
-            <article class="media content-section"></article>
-            <h2><a class="article-title" href="/blog?id={{blog.id}}">{{blog.title}}</a></h2>
-            <p class="article-content">Post {{ blog.id }}. {{blog.text}}</p>
+            <article class="media content-section">
+            <h2><a class=" article-title article-title-hover" href="/blog?id={{blog.id}}">{{blog.title}}</a></h2>
+            <p class="article-content" >Post {{ blog.id }}. {{blog.text}}</p><br>
                 {% for user in users%}
                     {% if blog.owner_id == user.id%}
                         <h5>Written by <a href="/blog?user_id={{user.id}}">{{ user.username }}</a> @ {{blog.moment}}</h5>
                     {% endif %}
                 {% endfor %}
-
+            </article>
             {% endfor %}
- 
-        </article>
-   </div>  
+    </div>
   {% endif %}
 
   

@@ -1,45 +1,47 @@
-{% extends "base.html" %}
+{% extends "base.html" %}{% block content %}
 
-{% block content %}
-<h1>Blogz Registation</h1>
-<form action="/register" method="post" class="form-group">
-    <table>
-        <tr>
-            <td><label for="username">Username</label></td>
-            <td>
-                <input class="article-title form-title-field" name="username" type="text" value="{{ username }}"
-                required pattern="[A-Za-z0-9]{3,20}"
-                title='User Name: 3 to 20 characters'/>
-                <span class="error">{{ username_error }}</span>
-            </td>
-        </tr>
-        <tr>
-            <td><label for="email">Email</label></td>
-            <td>
-                <input class="article-title form-title-field" name="email" type="email" value="{{ email }}"
-                required pattern="[A-z0-9]+@[A-z0-9]+\.[A-z]{3,20}"
-                title='Email: 3 to 20 character, @, ., no spaces'  />
-            </td>
-        </tr>
-        <tr>
-            <td><label for="password">Password</label></td>
-            <td>
-                <input class="article-title form-title-field" name="password" type="password"
-                required pattern="[a-zA-Z0-9_-]{3,20}"
-                title='Password: 3 to 20 characters' />
-                <span class="error">{{ password_error }}</span>
-            </td>
-        </tr>
-        <tr>
-            <td><label for="verify">Verify Password</label></td>
-            <td>
-                <input class="article-title form-title-field" name="verify" type="password"
-                required pattern="[a-zA-Z0-9_-]{3,20}"
-                title="Passwords must match" />
-                <span class="error">{{ verify_error }}</span>
-            </td>
-        </tr>
-    </table>
-    <input class="submit-btn" type="submit" value="register">
-</form>
+<div class="add-content">
+    <h1>Blogz Registation</h1>
+    <form action="/register" method="post" class="form-group">
+        <table>
+            <tr>
+                <td><label for="username">Username</label></td>
+                <td>
+                    <input class="article-title form-title-field" name="username" type="text" value="{{ username }}"
+                    required pattern="[A-Za-z0-9]{3,20}"
+                    title='User Name: 3 to 20 characters'/>
+                    <span class="error">{{ username_error }}</span>
+                </td>
+            </tr>
+            <tr>
+                <td><label for="email">Email</label></td>
+                <td>
+                    <input class="article-title form-title-field" name="email" type="email" value="{{ email }}"
+                    required pattern="[A-z0-9]+@[A-z0-9]+\.[A-z]{3,20}"
+                    title='Email: 3 to 20 character, @, ., no spaces'  />
+                </td>
+            </tr>
+            <tr>
+                <td><label for="password">Password</label></td>
+                <td>
+                    <input class="article-title form-title-field" name="password" type="password"
+                    required pattern="[a-zA-Z0-9_-]{3,20}"
+                    title='Password: 3 to 20 characters' />
+                    <span class="error">{{ password_error }}</span>
+                </td>
+            </tr>
+            <tr>
+                <td><label for="verify">Verify Password</label></td>
+                <td>
+                    <input class="article-title form-title-field" name="verify" type="password"
+                    required pattern="[a-zA-Z0-9_-]{3,20}"
+                    title="Passwords must match" />
+                    <span class="error">{{ verify_error }}</span>
+                </td>
+            </tr>
+        </table>
+        <input class="register-submit-btn" type="submit" value="register">
+    </form>
+    </div>
+    
 {% endblock %}
